@@ -8,19 +8,23 @@ data = [ [ 5, ('G', 29.5), "Monday",    "file17.py", 70],
         ]
 
 def keyFunction(row):
-    return row[1][1]
+    return row[1][1] 
 
 print("using a function [1][1]; this is the second part of the tuple")
 sortedData = sorted(data, key=keyFunction, reverse=True)
+<<<<<<< Updated upstream:src/03 Data Types/5. Sorting/02_using_sorted.py
 for d in sortedData: 
     print(d)
+=======
+for d in sortedData: print(d) #valid way to write if 1 line loop
+>>>>>>> Stashed changes:src/03 Data Types/Sorting/01_using_sorted.py
 print()
-
+#sort based on highest filename number first
 print("using a lambda function [3]; this is the fileName")
 sortedData = sorted(data, key=lambda row:row[3], reverse=True)
 for d in sortedData: print(d)
 print()
-
+#sort based on letters
 print("using a lambda function [1][0]; this is the first part of the tuple")
 sortedData = sorted(data, key=lambda row:row[1][0], reverse=False)
 for d in sortedData: print(d)

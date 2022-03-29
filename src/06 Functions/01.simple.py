@@ -15,9 +15,10 @@ The keyword def is used to introduce a function.
 def square(n):      # this creates a pointer: square and bytecode for the function object
     print(n**2)
 
-
+f = square # You can also make a new point to point to same function object
 square(5)
 square(6)
-square(7)
-
+square = 99 #make square to instead point at the 99 object
+#square(7) #this fails now
+f(7) # this still works
 

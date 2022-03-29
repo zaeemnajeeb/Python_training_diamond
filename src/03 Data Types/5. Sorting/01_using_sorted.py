@@ -7,7 +7,7 @@ cards = [[ 5, 'H'],
          ['J', 'D'],
          [ 2, 'H'],
          [ 2, 'C'],
-         [ 9, 'S']]
+         [ 9, 'S']] #2D list
 
 def keyFunction(card):
     suits = {'S':4, 'H':3, 'D':2, 'C':1}
@@ -17,7 +17,7 @@ def keyFunction(card):
     if pip in pips: pip = pips[pip]
     rank = suits[suit]*13 + pip
     return rank
-
+#sorts based on a function, where higher number means higher in the list
 sortedData = sorted(cards, key=keyFunction)
 for d in sortedData: 
     print(f"{d[0]}{d[1]}", end=" ")

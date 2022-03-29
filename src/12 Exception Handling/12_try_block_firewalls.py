@@ -8,16 +8,27 @@ class SmallProblem(Exception): pass
 def main():
     try:
         part1()
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         part2(500)
         part3()
         part4()
     except BigProblem as e:
+=======
+=======
+>>>>>>> Stashed changes
+        part2(500) #2 types of exceptions possible
+        part3() #always runs UNLESS BigProblem
+        part4() #always runs UNLESS BigProblem
+    except BigProblem as e: #handle BigProblem
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         print(e)
-
 def part1():
     print("part 1")
-
-def part2(x):
+def part2(x): #Try block in part 2
     try:
         if x > 100:
             raise BigProblem("part 2 failed spectacularly")
@@ -29,11 +40,10 @@ def part2(x):
     # big problems break through the firewall
     except SmallProblem as e:
         print(e)
-
-def part3():
+def part3(): #WILL RUN EVEN IF PART 2 FAILS
     print("part 3")
 
-def part4():
+def part4(): #WILL RUN EVEN IF PART 2 FAILS
     print("part 4")
     
 main()

@@ -35,7 +35,12 @@ for value in sorted(sequence3):
     print(value, end=' ... ')
 print()
 
+<<<<<<< Updated upstream:src/03 Data Types/2. Lists and Tuples/05_sequences.py
 # using range
 for x in range(1, 5):
     print(x)
 
+=======
+for x in range(5) :
+    print (x)
+>>>>>>> Stashed changes:src/03 Data Types/Lists, Tuples/05_sequences.py

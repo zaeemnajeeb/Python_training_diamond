@@ -27,17 +27,17 @@ def forLoop2(n):
         y[i] = float(i)**0.5
     return sum(y)
 
-import math
-def listComprehension(n):
+import math #This is functional coding, slightly faster than standard loop as there is no i increasing
+def listComprehension(n): # all variables are immutable here
     return sum([x**0.5 for x in range(n)])
 
-import numpy
+import numpy #same speed as writing in C in the first place
 def numpyMethod(n):
     x = numpy.arange(0, n)
     y = numpy.sqrt(x)
     return numpy.sum(y)
-
-@numba.jit(nopython=True, parallel=True)
+#This is a decorator
+@numba.jit(nopython=True, parallel=True) #takes python code and changes it to assembler code
 def numbaMethod(n):
     x = numpy.arange(0, n)
     y = numpy.sqrt(x)

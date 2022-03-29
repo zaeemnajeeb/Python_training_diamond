@@ -12,8 +12,18 @@ def f(x):
 # Resource Allocation is Initialization
 
 try:
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     x = 10
     f(x)
+=======
+    x = 100
+    f(x) #can raise an exception
+>>>>>>> Stashed changes
+=======
+    x = 100
+    f(x) #can raise an exception
+>>>>>>> Stashed changes
 except Exception as e:
     print(f'caught exception ... {e}')
 else:

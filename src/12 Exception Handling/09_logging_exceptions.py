@@ -8,7 +8,8 @@
 import logging, os
 
 # create log file
-if not os.path.exists('logs'): os.mkdir('logs')
+#ONLY MAKE IF FOLDER DOES NOT EXIST
+if not os.path.exists('logs'): os.mkdir('logs') #made in current directory
 logging.basicConfig(filename='logs/exception.log',level=logging.ERROR)
 
 

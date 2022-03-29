@@ -19,9 +19,9 @@ class MyClass:
         global lock, count1, count2
         for i in range(0, 20*1000*1000):
             count1 += 1
-            lock.acquire()
+            lock.acquire() #protect count2
             count2 += 1
-            lock.release()
+            lock.release()#unlock
 
     
 lock = Lock()

@@ -3,12 +3,16 @@
 #    range
 #
 ############################################################
+<<<<<<< Updated upstream:src/03 Data Types/2. Lists and Tuples/04_ranges.py
 
 import numpy as np
 
 l = [0, 1, 2, 3, 4, 5, 6]
 l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+=======
+l = [0, 1, 2, 3, 4, 5, 6]
+>>>>>>> Stashed changes:src/03 Data Types/Lists, Tuples/04_ranges.py
 z = range(2000)
 print(type(z))
 print(z)
