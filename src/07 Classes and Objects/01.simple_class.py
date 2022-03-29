@@ -1,9 +1,10 @@
 '''
 This example show a typical design of a class.  For full details look at the accompanying Jupyter Notebook
 '''
+print()
+#test
 
-
-class Point:
+class Point: # this is the same as Point(object)
     '''
     put documentation in here
     '''
