@@ -13,8 +13,7 @@ sys.path.append("mylib")
 for d in sys.path:
     print(d)
 
-import mypackage
-
+import mypackage #flagged as VS does not know we will add a new path above
 
 mypackage.f1()
 mypackage.f2()

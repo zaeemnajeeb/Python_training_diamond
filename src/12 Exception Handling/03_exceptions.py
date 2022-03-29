@@ -3,7 +3,7 @@ import os; os.system("clear")
 # define two tag classes that inherit from Exception
 class TooBig(Exception): 
     def __init__(self, message): 
-        super().__init__(message)
+        super().__init__(message) # this is to put messages in
 class MuchTooBig(Exception): 
     def __init__(self, message): 
         super().__init__(message)

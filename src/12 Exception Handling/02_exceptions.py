@@ -1,16 +1,9 @@
 # define two tag classes
 class TooBig(Exception): pass
 class MuchTooBig(Exception): pass
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
+import os; os.system("clear") #run unix command to clear 
 
-=======
-import os; os.system("clear") #run unix command to clear 
->>>>>>> Stashed changes
-=======
-import os; os.system("clear") #run unix command to clear 
->>>>>>> Stashed changes
 def main():
     """ try different values of x and y to trigger exceptions"""
     try:

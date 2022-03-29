@@ -7,10 +7,7 @@ import os; os.system("clear")
 # try throw catch
 # try raise except
 import os; os.system("clear") #run unix command to clear 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 def main():
     """ try different values of x and y to trigger exceptions"""
     try:
@@ -25,7 +22,9 @@ def main():
         print(f"x is {x}")
         print(f"x/y is {x/y}") #exception thrown here
     except Exception as e: #error message is e
-        print(e)
+        #Python runtime also has some standard errors like divide by 0
+        print(e) #this is the same as print(e.__str__())
+        #__str__ is done by default if nothing specified
 
 
-main()
+main() # run

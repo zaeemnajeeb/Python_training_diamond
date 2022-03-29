@@ -1,4 +1,4 @@
-class BigProblem(Exception): pass
+class BigProblem(Exception): pass #your own excpetion subclasses
 class SmallProblem(Exception): pass
 
 # example to demonstrate structuring of try blocks
@@ -8,23 +8,11 @@ class SmallProblem(Exception): pass
 def main():
     try:
         part1()
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        part2(500)
-        part3()
-        part4()
-    except BigProblem as e:
-=======
-=======
->>>>>>> Stashed changes
         part2(500) #2 types of exceptions possible
-        part3() #always runs UNLESS BigProblem
-        part4() #always runs UNLESS BigProblem
+        part3() #always runs UNLESS BigProblem found in part 2
+        part4() #always runs UNLESS BigProblem found in part 2
     except BigProblem as e: #handle BigProblem
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
         print(e)
 def part1():
     print("part 1")

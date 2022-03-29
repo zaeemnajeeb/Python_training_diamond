@@ -6,8 +6,8 @@
 
 
 def CalculateQuartile(percent):
-    assert type(percent).__name__ == 'int'
-    assert percent >= 0 and percent <= 100
+    assert type(percent).__name__ == 'int' #precondition here is that percent is an integer
+    assert percent >= 0 and percent <= 100 #precondition here is the range
     quartile = 1
     if percent > 25:
         quartile = 2

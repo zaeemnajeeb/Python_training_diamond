@@ -8,5 +8,3 @@ try:
     print( square("seven") )
 except Exception as e:
     print(e)
-
-1
