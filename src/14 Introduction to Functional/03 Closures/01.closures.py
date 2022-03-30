@@ -17,10 +17,11 @@ def f():
     a = [100]
     x = [200]
     y = [300]
-    def g():
+    def g(): #traditionally, you would have to pass x and y inside
+    #as nested function, g can see everything in f as well    
         x.append(201)
         y.append(301)
-    g()
+    g() # append - NO NEED TO INPUT x or Y
     for c in g.__closure__:
         print(f"closure for g: {c.cell_contents}")
 

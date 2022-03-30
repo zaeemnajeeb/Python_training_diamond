@@ -25,8 +25,3 @@ sequence = list(range(14, 200))
 # filter out all non primes
 primes = list(filter(primesFilter, sequence))
 print(primes)
-
-
-
-
-1

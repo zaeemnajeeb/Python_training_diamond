@@ -24,12 +24,12 @@ without raising an exception.
 ############################################################
 # Part 1 - no closure (immutable l-value)
 def outer():
-#    x = 50      # local variable, lifetime ends at end of function
+    x = 50      # local variable, lifetime ends at end of function
     def inner():
         x += 1  # x refers to local x, not a closure on outer.x so this raises an exception
     return inner
 
-f = outer()
+f = outer() #points to same place as inner
 try:
     f()     # outer 'x' is not in scope here (outer has already returned)
             # hence exception raised

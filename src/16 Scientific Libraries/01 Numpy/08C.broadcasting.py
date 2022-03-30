@@ -27,4 +27,3 @@ fig = plt.figure()
 ax = Axes3D(fig)
 surface = ax.plot_surface(x, y, z, cmap="terrain", rstride = 25, cstride = 5) #, rstride=1, cstride=1, cmap=cmap, linewidth=0, antialiased=False)
 plt.show()
-1

@@ -15,8 +15,8 @@ import functools as ft
 # return a new function which behaves like the original function with some parameters filled in
 # range takes 3 parameters
 myrange = ft.partial(range, 0, 10) # 2 parameters filled in
-print((list(myrange())))
-print((list(myrange(2)))) # supply a 3rd parameter
+print((list(myrange()))) # defaults to a step of 1
+print((list(myrange(2)))) # supply a 3rd parameter - set steps to 2
 
 # now try with a function of 5 parameters
 def f(v, w, x, y, z): return v + w + x + y + z

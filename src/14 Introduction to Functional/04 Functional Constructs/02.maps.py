@@ -30,5 +30,3 @@ cubes = list(map(cube, sequence))
 for value in cubes:
     print("%6i" % value, end=' ') 
 print()
-
-1

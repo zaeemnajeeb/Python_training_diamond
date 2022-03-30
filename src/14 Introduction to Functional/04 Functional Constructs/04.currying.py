@@ -32,7 +32,7 @@ d = f(1)(2)(3)(4)
 e = f(1)(2)(3)(4)(5)
 
 # missing arguments can be supplied later
-print(a(20)(30)(40)(50))
+print(a(20)(30)(40)(50)) # supply remaining 4 etc.
 print(b(30)(40)(50))
 print(c(40)(50))
 print(d(50))

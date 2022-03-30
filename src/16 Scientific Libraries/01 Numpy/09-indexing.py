@@ -30,6 +30,3 @@ filter = a[:,:] % 3 == 0; print(filter)
 a[filter] = 88; print(a)
 
 
-
-1
-

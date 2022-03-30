@@ -25,8 +25,9 @@ Now the code behaves as expected and prints 0, 1, 2, 3.  Note that there "f" has
 # Part 1 - closure gives 'unexpected' results
 # Closures close over variables, not values
 funcs = []
-for i in range(4):
-    def f():
+for i in range(4): # i is an immutable variable so in the closure and only being read.
+                   # As i however is pointing at something else when called, that is what shows
+    def f():        
         print(("locals for f(): ", locals()))
         print(i)    # this uses the global variable i
     funcs.append(f)

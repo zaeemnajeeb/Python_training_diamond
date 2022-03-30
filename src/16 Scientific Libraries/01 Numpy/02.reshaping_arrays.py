@@ -27,12 +27,12 @@ At he end of the example, we take a look at properties stored in the view.
 import numpy as np
 
 # create array
-a = np.arange(24); print(a)
+a = np.arange(24); print("a: ", a)
 # reshape it
-b = a.reshape(2,3,4); print(b)
+b = a.reshape(2,3,4); print("b: ", b)
 a[13] = 99
-print(a)
-print(b)
+print("altered a: ", a)
+print("altered b: ", b)
 # display properties held in the view
 print(type(b))
 print("Shape:", b.shape)

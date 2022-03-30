@@ -29,6 +29,7 @@ def quads():
 
 # create 3 generators and put them in a list
 generators = []
+#note squares, cubes and quads are all just generators
 generators.append( squares() )
 generators.append( cubes() )
 generators.append( quads() )
@@ -36,7 +37,7 @@ generators.append( quads() )
 # generators allow us to perform different calculations in parallel without using threading
 # create a round robin scheduler with the list of generators
 while(True):
-    for g in generators:
+    for g in generators: # for a generator in the list of generators
         print(next(g))
         time.sleep(0.5)
 
