@@ -23,17 +23,17 @@ print("start")
 
 # this takes 10 seconds to evaluate - each expression is evaluated
 print((["no sleep", time.sleep(5), time.sleep(5)][0]))
-print("list DONE")
+print("list DONE") # THIS IS EAGER EVALUATION - everything calculated even if not used
 
 # list comprehensions are evaluated immediately - takes 10 seconds
 myComprehension = [time.sleep(n) for n in [0, 5, 5]]
 myComprehension[0]
-print("list comprehension DONE")
+print("list comprehension DONE")# THIS IS EAGER EVALUATION - everything calculated even if not used
  
 # generator comprehensions are evaluated in a lazy way
-myIterator = (time.sleep(n) for n in [0, 5, 5])
-next(myIterator)
-next(myIterator)
+myIterator = (time.sleep(n) for n in [0, 5, 5]) #NO DELAY ON THIS LINE
+next(myIterator)#NEXT EVALUATES - n=0
+next(myIterator)#NEXT evaluates when n=5 so NOW delay
 print("generator comprehension DONE")
 
 

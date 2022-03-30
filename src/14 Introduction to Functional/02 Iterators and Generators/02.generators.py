@@ -32,7 +32,7 @@ gets expanded by the interpreter to something like the following
                     else:
                         x = x * 2
                         self.x = x
-                    return x
+                    return x            #yield is mapped onto here, where you return self
 
 Support inside the for loop is now the same as for explicit iterators.  Unfortunately, you can't see the
 expanded code in the debugger.
@@ -68,7 +68,7 @@ def powers():
 
 # calling the function produces a generator object, which is also an iterator
 # note: calling the function does NOT execute the code in the function
-g = powers()        # you can't step into powers() here
+g = powers()        # you can't step into powers() here - this just generates the iterator
 print(g)
 
 # check that g has both iterator methods
@@ -82,8 +82,8 @@ i = g.__iter__()
 print(f"id returned by __iter__(): {id(i):x}")
 
 # call __next__ directly (discouraged)
-print(g.__next__(), end=", ")
-print(g.__next__(), end=", ")
+print(g.__next__(), end=", ") # will run generator as if iterator
+print(g.__next__(), end=", ") # Execution here will resume immediately after yield.
 
 # use the global function next (recommended)
 print(next(g), end=", ")

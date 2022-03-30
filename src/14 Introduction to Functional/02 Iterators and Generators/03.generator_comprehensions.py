@@ -20,9 +20,9 @@ from math import sqrt
 roots = (sqrt(x) for x in range(10))
 
 # consume 3 values
-print(f"{next(roots):6.2f}", end=' ')
-print(f"{next(roots):6.2f}", end=' ')
-print(f"{next(roots):6.2f}")
+print(f"{next(roots):6.2f}", end=' ') #this will produce first
+print(f"{next(roots):6.2f}", end=' ') #this is second
+print(f"{next(roots):6.2f}") #third
 
 # iterate using the generator
 # note: the generator has already been called 3 times

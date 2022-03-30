@@ -1,3 +1,19 @@
+'''
+Exceptions
+==========
+Rather than use the Exception class to raise exceptions, you might prefer to raise user defined exceptions.  In
+this example we define two "tag" classes: 
+        class TooBig(Exception): pass
+        class MuchTooBig(Exception): pass
+
+A tag class is one that doesn't add any functionality to the Exception class, but does have a different name.
+This allows you to catch your objects of your tag classes rather than those of the Exception class:
+            except TooBig as e:
+                print("x is too big")
+            except MuchTooBig as e:
+                print("x is much too big")
+'''
+
 # define two tag classes
 class TooBig(Exception): pass
 class MuchTooBig(Exception): pass
@@ -23,6 +39,5 @@ def main():
         print("x is much too big")
     except Exception as e: #DONT PLACE 1st as the subclasses inherit this
         print(e) #if this except is first, only this will be raised
-
 
 main()

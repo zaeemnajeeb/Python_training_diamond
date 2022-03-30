@@ -15,7 +15,7 @@ def catch(fn):  # fn captures n in the call
     try:
         return f"{fn():.2f}"  # fn = the lambda which takes no parameters
     except Exception as e:
-        return e
+        return e #returns error message into comprehension
 
 # create a list containing zero
 numbers = [float(n) for n in range(-5, 5)]
