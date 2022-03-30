@@ -50,11 +50,12 @@ from matplotlib.animation import FuncAnimation
 from math import sqrt
 
 def update_plot(frame, data, sc):
-    sc._offsets3d = data[frame]
-    return sc
+    sc._offsets3d = data[frame] #To update scatter, you must set _offset3d to new frame
+    #The data has already been made in advance
+    return sc #return the scatter plot
 
 def main():
-    matplotlib.use('TkAgg')
+    matplotlib.use('TkAgg') # use TkAgg animation package
     frames = 2000
     dimensions = 3
     particles = 20
@@ -81,9 +82,9 @@ def main():
     ax.set_autoscale_on(False)
 
     ix, iy, iz = data[0]
-    sc = ax.scatter(ix, iy, iz, s=100.0, c='red', marker='d')
+    sc = ax.scatter(ix, iy, iz, s=100.0, c='red', marker='d') #set scatter plot
 
-    ani = FuncAnimation(fig, update_plot, frames=frames, fargs=(data,sc), interval=100)
+    ani = FuncAnimation(fig, update_plot, frames=frames, fargs=(data,sc), interval=100) #ANIMATE
     plt.show()
 
 

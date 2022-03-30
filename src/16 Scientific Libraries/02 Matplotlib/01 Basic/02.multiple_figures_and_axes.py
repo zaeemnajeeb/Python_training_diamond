@@ -26,6 +26,6 @@ for fig in [fig1, fig2, fig3]:
         ax.set_facecolor(colors[n-1])
 
 print(f"type of Axes: {type(ax)}")
-plt.tight_layout()
+plt.tight_layout() # 
 plt.show()
 

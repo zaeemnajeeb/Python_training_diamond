@@ -21,7 +21,7 @@ color = "r"             # red
 marker = "o"            # circle
 redCircles = f"{color}{marker}"
 ax.plot([1,2,3,4], [1,4,9,16], redCircles)
-ax.axis([0, 6, 0, 20])
+ax.axis([0, 6, 0, 20]) # these are the limits, [xmin, xmax, ymin, ymax]
 ax.set_ylabel("squares")
 plt.show()
 

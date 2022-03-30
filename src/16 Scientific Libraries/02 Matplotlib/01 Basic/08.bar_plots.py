@@ -26,7 +26,7 @@ p2 = plt.bar(X, Tops, barWidth, bottom=Bottoms, yerr=errorBarsTops)
 plt.xlabel('X Axis')
 plt.ylabel('Y Axis')
 plt.title('Bar Chart')
-plt.xticks(X, ('G1', 'G2', 'G3', 'G4', 'G5'))
-plt.yticks([0,10,20,30,40,50,60,70,80])
+plt.xticks(X, ('G1', 'G2', 'G3', 'G4', 'G5')) # change ticks label
+plt.yticks([0,10,20,30,40,50,60,70,80]) # change ticks
 plt.legend((p2[0], p1[0]), ('Tops', 'Bottoms'))
 plt.show()

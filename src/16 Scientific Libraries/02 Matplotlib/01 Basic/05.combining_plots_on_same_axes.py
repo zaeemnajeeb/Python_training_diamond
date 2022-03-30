@@ -16,11 +16,9 @@ greenTriangles = "g^"
 
 ax = plt.subplot()
 ax.plot(t, t,    redDashes, 
-         t, t**2, blueSquares,  
-         t, t**3, greenTriangles)
+        t, t**2, blueSquares,  
+        t, t**3, greenTriangles)
 ax.set_title("3 plots on One Axes")
 plt.gcf().canvas.set_window_title('Multiple Plots')
 
 plt.show()
-
-1

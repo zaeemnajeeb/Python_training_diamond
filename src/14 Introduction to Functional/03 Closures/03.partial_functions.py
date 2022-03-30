@@ -14,7 +14,9 @@ a function derived from "f" where the value of x doesn't need to be passed, i.e.
 def f(x):
     def g(y, z):    # this function knows about the value of x using a closure
         return x + y + z
-    return g
+    def h(a, b):
+        return a + b
+    return (g, h)
 
 f15 = f(15)   # f15 points to a function returning 15 + y + z
 f20 = f(20)   # f20 points to a function returning 20 + y + z

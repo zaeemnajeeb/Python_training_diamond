@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 t = np.arange(-2.0, 4.0, 0.01)
 
 plt.figure(1)
-plt.subplot(3,1,1)
+plt.subplot(3,1,1) #this is the full way to specify subplots
 plt.gca().patch.set_facecolor((0.1, 0.2, 0.6))
 plt.plot(t, t+t**2)
 plt.subplot(312)
@@ -31,7 +31,7 @@ plt.plot(t, t+t**3)
 
 # switch to figure 2
 plt.figure(2)
-plt.subplot(211)
+plt.subplot(211) # this is a shorthand way to specify subplot
 plt.plot(t, t-t**2)
 plt.subplot(212)
 plt.plot(t, t-t**3)
