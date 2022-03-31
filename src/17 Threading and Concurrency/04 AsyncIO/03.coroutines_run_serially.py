@@ -14,12 +14,12 @@ import asyncio
 # this is a new style coroutine
 async def coroutineA():
     print('I am coroutineA')
-    await asyncio.sleep(1)                # yield control
-    print('I am coroutineA')
+    await asyncio.sleep(1)                # yields control here to allow another task to return
+    print('I am coroutineA')              # As no other task here to run, continues as usual
 
 async def coroutineB():
     print('I am coroutineB')
-    await asyncio.sleep(1)                # yield control
+    await asyncio.sleep(1)                # yield control as in A
     print('I am coroutineB')
 
 

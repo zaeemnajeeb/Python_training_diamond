@@ -15,7 +15,7 @@ try:
         stderr = subprocess.PIPE, 
         shell=True)
     p.wait()        # wait for child process to terminate
-    (out, err) = p.communicate()        
+    (out, err) = p.communicate()     #send data back to you via pipe    
 except subprocess.CalledProcessError as e:
     print(e)
     sys.exit()

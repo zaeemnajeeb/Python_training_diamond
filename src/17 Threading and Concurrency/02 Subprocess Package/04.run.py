@@ -12,7 +12,7 @@ import subprocess
 from subprocess import CalledProcessError
 
 # run() returns normally if the command completes with a zero exit status
-response = subprocess.run("ls -l *.py", shell=True, check=True)
+response = subprocess.run("ls -l *.py", shell=True, check=True) #Uses pipes
 print(f"run() returns an object of type: {type(response)}")
 print(response)    
 print()

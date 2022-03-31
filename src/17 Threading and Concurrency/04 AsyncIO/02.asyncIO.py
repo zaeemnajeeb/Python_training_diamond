@@ -49,6 +49,6 @@ async def main():
     await asyncio.wait([task1, task2, task3, task4])
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_event_loop() #event loop like matplotlib for graphics
     loop.run_until_complete(main())
     loop.close()

@@ -10,10 +10,10 @@ import dis
 # Operations consisting of a single byte code are thread safe
 
 dis.dis("x += 1")           # not thread safe
-#               0 LOAD_NAME                0 (x)
-#               2 LOAD_CONST               0 (1)
-#               4 INPLACE_ADD
-#               6 STORE_NAME               0 (x)
+#               0 LOAD_NAME                0 (x) #load variable into memory
+#               2 LOAD_CONST               0 (1) #load integer 1 into register
+#               4 INPLACE_ADD                    #COULD SUSPEND HERE - lead to uncontrolled addition from another thread
+#               6 STORE_NAME               0 (x) #store answer back in x
 
 dis.dis("sort([2,5,3,6])")  # thread safe
 #               0 LOAD_NAME                0 (sort)

@@ -22,7 +22,6 @@ class MyClass:
             lock.acquire() #protect count2
             count2 += 1
             lock.release()#unlock
-
     
 lock = Lock()
 count1 = 0
@@ -43,7 +42,6 @@ t3.start()
 t1.join()
 t2.join()
 t3.join()
-
 print("count1: " + str(count1))
 print("count2: " + str(count2))
 

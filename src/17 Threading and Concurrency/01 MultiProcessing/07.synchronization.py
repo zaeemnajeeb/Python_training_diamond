@@ -11,7 +11,7 @@ import multiprocessing as mp
 import time, os
 
 
-def fn(lock):
+def fn(lock): #ensure only 1 process runs code at 1 time - forces serialisation
     for n in range(50):
         if synchronize: lock.acquire()
         print(f"This is ", end="")

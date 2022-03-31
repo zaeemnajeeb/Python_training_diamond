@@ -39,7 +39,7 @@ class Client:
         self.thread.start()
     
     def __call__(self):
-        b.wait()
+        b.wait() #waiting on the barrier before server
         self.server.connect(self)
 
 def main():

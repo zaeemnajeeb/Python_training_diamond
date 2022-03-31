@@ -24,7 +24,7 @@ print("\n\nThe progam now has a shell injected string which will delete your hom
 print(command)
 
 print("\n\nHowever, if you quote the input using 'shlex' - no problem")
-command = f'command = ls -l {shlex.quote(inFile)}'
+command = f'command = ls -l {shlex.quote(inFile)}' # this puts quote around things to prevent extra commands coming in
 print(command)
 
 

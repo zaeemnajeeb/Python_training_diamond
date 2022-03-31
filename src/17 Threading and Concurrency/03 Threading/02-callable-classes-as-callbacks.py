@@ -40,5 +40,3 @@ t2.join()
 t3.join()
 
 print("\nEnd of main")
-
-1

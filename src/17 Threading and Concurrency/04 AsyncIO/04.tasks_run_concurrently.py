@@ -21,8 +21,8 @@ async def coroutineB():
 
 
 async def main():
-    taskA = asyncio.create_task(coroutineA())
-    taskB = asyncio.create_task(coroutineB())
+    taskA = asyncio.create_task(coroutineA()) #ONLY NEW ADDITIONS
+    taskB = asyncio.create_task(coroutineB()) #ONLY NEW ADDITION
 
     await taskA
     await taskB

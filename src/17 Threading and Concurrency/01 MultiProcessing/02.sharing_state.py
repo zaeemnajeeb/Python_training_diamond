@@ -20,8 +20,8 @@ results = []        # global state
 
 if __name__ == '__main__': 
     p = mp.Process(target=fn, args=(20,))
-    p.start()
-    p.join()
+    p.start() #start process
+    p.join() #wait till finished
     # results will be computed in the child process
     # the parent process doesn't call fn, so results will be empty in the parent process
-    print(results)
+    print(results) #EMPTY!!!

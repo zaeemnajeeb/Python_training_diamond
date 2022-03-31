@@ -21,8 +21,8 @@ def PoolOfProcesses():
     # now use the map function provided by the multiprocessing module
     # to perform the same operation, but split across a pool of 5 processes
     # this function aggregates the results from each child process
-    with Pool(12) as p:
-        results = p.map(f, range(N))    
+    with Pool(12) as p: #set up pool of 12 processes
+        results = p.map(f, range(N))    #map function f and calculate f(N) N many times
     #    print(f"multiple processes: {results}")        
 
 def f(x):

@@ -19,7 +19,6 @@ class MyClass:
             time.sleep(random.random() * 0.1)
         lock.release()    
 
-    
 lock1 = Lock()
 lock2 = Lock()
 lock3 = Lock()
@@ -47,5 +46,3 @@ t3.join()
 t4.join()
 
 print("\nEnd of main")
-
-1

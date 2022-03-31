@@ -34,15 +34,15 @@ def fn(size, results):
 
 if __name__ == '__main__': 
     # mp.Value and mp.Array use shared memory
-    size = mp.Value('i', 10)
-    results = mp.Array('i', [0]*size.value)
+    size = mp.Value('i', 10) #i is in shared memory
+    results = mp.Array('i', [0]*size.value) #array in shared memory - creates list of 10 zeroes
 
     # expose the wrapper objects
     print(type(size))
     print(type(results))
 
     p = mp.Process(target=fn, args=(size, results))
-    p.start()
+    p.start()               # start process
     p.join()                # wait for child to complete
 
     # now view shared memory in parent process

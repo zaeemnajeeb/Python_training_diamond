@@ -22,7 +22,7 @@ class MyClass:
 
 
 
-semaphore = BoundedSemaphore(3)
+semaphore = BoundedSemaphore(3) # only allow 3 threads to run at a time
 
 m1 = MyClass()
 m2 = MyClass()
@@ -57,5 +57,3 @@ t6.join()
 t7.join()
 
 print("\nEnd of main")
-
-1

@@ -9,7 +9,7 @@ def compute1(pool):
     future1 = pool.submit(sum_of_squares, 1, 100)
     future2 = pool.submit(sum_of_squares, 101, 10000)
     future3 = pool.submit(sum_of_squares, 10001, 100 * 1000 * 1000)
-    while not future3.done():
+    while not future3.done(): #if future 3 not done, wait
         sleep(0.25)
         print(".", end=" ", flush=True)
     
@@ -18,10 +18,10 @@ def compute1(pool):
 
 def compute2(pool):
     # blocking awaiting result
-    future1 = pool.submit(sum_of_squares, 1, 100)
+    future1 = pool.submit(sum_of_squares, 1, 100) 
     future2 = pool.submit(sum_of_squares, 101, 10000)
     future3 = pool.submit(sum_of_squares, 10001, 100 * 1000 * 1000)
-    # this will block until all results are available
+    # this will block until all results are available even though no while loop
     print(future1.result() + future2.result() + future3.result())
 
 def sum_of_squares(lo, hi):

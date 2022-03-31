@@ -17,14 +17,14 @@ class Producer:
         time.sleep(5)
         with dataAvailable:         # grab the lock
             print("Producer is notifying all consumers")
-            dataAvailable.notifyAll()
+            dataAvailable.notifyAll() #Let threads know producer is ready
 
 class Consumer:
     def __call__(self, name, dataAvailable):
         with dataAvailable:
             print(f"consumer{name} is waiting")
             dataAvailable.wait()
-            print(f"consumer{name} is has obtained the data")
+            print(f"consumer{name} is has obtained the data") #Consume producer
 
     
 dataAvailable = threading.Condition()
