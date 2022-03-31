@@ -20,20 +20,13 @@ logging.debug('This message goes to the log file')
 logging.info(f'This message was timed at: {t}')
 
 # inspect log file
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 import os
 os.system("cat logs/example.log")
 
 subprocess.call("cat logs/example.log", shell=True)
-=======
-=======
->>>>>>> Stashed changes
+
 #unix way to call
 #import os
 #os.system("cat logs/example.log")
-subprocess.call("cat logs/example.log", shell=True) #run on bash shell (unix)
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+

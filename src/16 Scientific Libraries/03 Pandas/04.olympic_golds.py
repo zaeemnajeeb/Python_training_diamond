@@ -62,19 +62,19 @@ import pandas as pd
 import pylab as pl
 pd.set_option('display.width', 100)
 
-
-
 def main():
     # read in medal table (n.b. delimiters contain at least 2 spaces and sometimes a bracket) 
     medal_table = pd.read_csv("data/olympics_2012_medal_table.txt",
                                engine = 'python',
                                skiprows = 1,
-                               sep = '[ )(]{2,}')
+                               sep = '[ )(]{2,}') #custom separation
     
-    korean_golds = medal_table[medal_table.Id == "KOR"]["Gold"].values[0]
+    #values[0] needed here as a dataframe would be outputted, containing the index. Convert to NumPy array to remove index
+    korean_golds = medal_table[medal_table.Id == "KOR"]["Gold"].values[0] #interested in rows with Id "Korea" and then retrieve Gold
     print(korean_golds, type(korean_golds))
     print(f"South Korea earned {korean_golds} golds")
     print("\nCountries with more golds than South Korea:")
+    #pick out all the rows where the gold value is greater than that of Koreas
     result = medal_table[medal_table["Gold"] > korean_golds][["Country", "Gold"]]
-    print(result.to_string(index=False))
+    print(result.to_string(index=False)) #remove the index in the print
 main()

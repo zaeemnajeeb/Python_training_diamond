@@ -14,9 +14,9 @@ def main():
                                skipinitialspace = True,
                                engine = 'python', 
                                sep = '[*# ]+')
-    lerwick_data.to_excel('data/lerwick.xlsx', index = False)
+    lerwick_data.to_excel('data/lerwick.xlsx', index = False) #convert to spreadsheet
     del lerwick_data
-    lerwick_data = pd.read_excel('data/lerwick.xlsx', 'Sheet1')
+    lerwick_data = pd.read_excel('data/lerwick.xlsx', 'Sheet1') #output if you dont have libre office
     print(lerwick_data)
 
 main()

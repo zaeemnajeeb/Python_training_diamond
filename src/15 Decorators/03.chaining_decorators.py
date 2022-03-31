@@ -46,9 +46,9 @@ def getBoldDate():
 def getUsDate():
     return getDate()
 
-@bold
-@us
-def getBoldUsDate():
+@bold #make it bold
+@us #change dates to US format
+def getBoldUsDate(): #will use both decorators
     return getDate()
 
 

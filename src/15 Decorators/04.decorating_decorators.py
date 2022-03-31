@@ -83,11 +83,11 @@ def cube(x):
 def quad(x):
     return x * x * x * x
 
-trace.enable()    
+trace.enable()   #use the toggleable decorator to enable it 
 print(square(4))
 print(cube(5))
 
-trace.disable()
+trace.disable() #disable trace, so now trace ran
 print(quad(10))
 
 trace.enable()

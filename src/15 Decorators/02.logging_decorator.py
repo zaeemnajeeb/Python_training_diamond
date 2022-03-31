@@ -42,15 +42,15 @@ def log(level):
         return enhance
     return logit
 
-@log(logging.WARNING)
+@log(logging.WARNING) #log
 def square(x): 
     return x * x
 
-@log(logging.DEBUG)
+@log(logging.DEBUG) #dont log
 def cube(x):
     return x * x * x
 
-@log(logging.CRITICAL)
+@log(logging.CRITICAL) #log
 def quad(x):
     return x * x * x * x
     
@@ -62,9 +62,9 @@ logging.basicConfig(level=logging.DEBUG)
 # logging.basicConfig(level=logging.ERROR)
 # logging.basicConfig(level=logging.CRITICAL)
 
-# print( log(logging.WARNING)(square)(4) )
-print(square(4))
+# print( log(logging.WARNING)(square)(4) ) # if there was no @log
+print(square(4)) # will get logged
 print(cube(5))
-print(quad(10))
+print(quad(10)) #will get logged
 
 

@@ -16,13 +16,13 @@ fast.
 '''
 
 def memoize(f):
-    cache = {}
+    cache = {} #sets up a cache
     def inner(n):
         # print(f"{n}: {cache}")
         if n in cache:
-            return cache[n]
+            return cache[n] #retrieve from cache if done before
         else:
-            cache[n] = f(n)
+            cache[n] = f(n) #put function in cache if new
             return cache[n]
     return inner
 

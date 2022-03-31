@@ -24,27 +24,27 @@ pd.set_option('display.width', None)        # None means all data displayed
 pd.set_option('display.max_rows', None)
 
 def inspect(item):
-    print()
-    print(item)
-    print(type(item))
-    print("-"*len(str(type(item))))
+    print() 
+    print(item)#print item
+    print(type(item))  #say type
+    print("-"*len(str(type(item)))) #print length
 
 def main(): 
     df = pd.read_csv("data/sample.csv", 
                      skipinitialspace=True, 
                      index_col=0)
-    print(df)
+    print(df) #output dataframe
 
     # inspect some standard dataframe methods    
     # the index
-    inspect(df.index)
+    inspect(df.index) #This is column 0 which can be string or integers
 
     # the column headings
     inspect(df.columns)
     
     # the values of the dataset (Numpy arrays)
-    inspect(df.values)
-    inspect(df.values[0])
+    inspect(df.values) #now NumPy array
+    inspect(df.values[0]) 
     inspect(df.values[0, 0])
 
     inspect(list(df.index))    # convert index to a list    
@@ -61,13 +61,13 @@ def main():
     inspect(df.loc['Peter'])   # loc uses index
 
     # print several rows
-    inspect(df.loc['Peter':'Bill'])
+    inspect(df.loc['Peter':'Bill']) #all rows from Peter to column which are indexes
 
     # selecting rows and columns
     inspect(df.loc[['Peter', 'Bill'], ['County', 'Height', 'Weight']])
     inspect(df.loc[:, ['County', 'Gender']])  # all rows, some columns
     inspect(df.loc[['Bill'], ['County']])     # 1 row, 1 column, two sets of []
-    inspect(df.loc['Bill', 'County'])         # only 1 set of []
+    inspect(df.loc['Bill', 'County'])         # only 1 set of [] - this is a single thing
 
     # remind ourselves of the complete dataframe
     print(df)

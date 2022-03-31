@@ -10,9 +10,11 @@ def summarize_files(topdir):
                 'size'     : "",
                 'ext'      : "",
                 'mtime'    : ""
-               }
-    filedata = [headers]
-    for path, dirs, files in os.walk(topdir):
+               } #empty dict
+
+    filedata = [headers] 
+
+    for path, dirs, files in os.walk(topdir): #os.walk to see every file in a directory
         for name in files:
             fullname = os.path.join(path,name)
             if os.path.exists(fullname):
@@ -22,13 +24,13 @@ def summarize_files(topdir):
                 'size'     : os.path.getsize(fullname),
                 'ext'      : os.path.splitext(name)[1],
                 'mtime'    : os.path.getmtime(fullname)
-            }
-            filedata.append(data)
+            } #retrieve relevant information
+            filedata.append(data) #append to filedata to build up a 2D dataset
     return filedata
 
 import pandas
-filedata = pandas.DataFrame(summarize_files("/home/chris/home/workspace/python-course"))
-#filedata = pandas.DataFrame(summarize_files("/dls_sw/i21/scripts"))
+#filedata = pandas.DataFrame(summarize_files("/home/chris/home/workspace/python-course"))
+filedata = pandas.DataFrame(summarize_files("/dls_sw/i21/scripts")) #for diamond machine
 print(filedata)
 print("Top 5 most common file extensions:")
 print(filedata['ext'].value_counts()[:5])

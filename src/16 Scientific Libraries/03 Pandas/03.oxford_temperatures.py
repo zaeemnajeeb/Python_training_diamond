@@ -50,7 +50,7 @@ def main():
                               engine = 'python', 
                               skiprows = 7, 
                               names = column_names, 
-                              na_values = ['---'], 
+                              na_values = ['---'], #if data missing, replace with NaN
                               skipinitialspace = True, 
                               sep = '[*# ]+')
 
@@ -58,10 +58,11 @@ def main():
     oxford_data.dropna()
     
     # create a new column from year and month columns
-    oxford_data['period'] = oxford_data.apply(
+    oxford_data['period'] = oxford_data.apply( #if from same period, find the
         lambda row : (row['year']//4)*4, raw = False, 
         axis = 1
         )
+    print(oxford_data) # see how there is a new column with years repeating 4 times
 
     # drop columns we are not using (not necessary)
     oxford_data.drop(['year', 'month', 'air-frost-days', 'rain(mm)', 'sun(hours)', 'comment'], axis = 1, inplace = True)
@@ -79,7 +80,7 @@ def main():
                                kind = 'bar')
 
     ax.set_xlabel("4 year period")
-    ax.set_ylabel(f"{chr(0x2103)}")     # degrees C
+    ax.set_ylabel(f"{chr(0x2103)}")     # degrees C stated in unicode
     for item in [ax. title, ax.xaxis.label, ax.yaxis.label]:
         item.set_fontsize(20)
     pl.show()
