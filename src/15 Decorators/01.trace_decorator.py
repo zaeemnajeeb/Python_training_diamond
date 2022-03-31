@@ -19,7 +19,7 @@ So in summary, when a function "fn" is decorated with a decorator "trace":
             @trace (the decorator used here)
             def fn(x): ...
 calls to "fn" get replaced with:
-            fn(x)  --> decorator(fn)(x)
+            fn(x)  --> trace(fn)(x)
 '''
 
 def trace(fn):

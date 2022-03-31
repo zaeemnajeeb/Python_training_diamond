@@ -67,12 +67,24 @@ def main():
     medal_table = pd.read_csv("data/olympics_2012_medal_table.txt",
                                engine = 'python',
                                skiprows = 1,
-                               sep = '[ )(]{2,}') #custom separation
-    
+                               sep = '[ )(]{2,}')
+    # look at some records in the dataframe
+    print(medal_table.head(10))
+
+    # try to get Korean Golds
+    korean_golds = medal_table[medal_table.Id == "KOR"]["Gold"]
+    print(korean_golds)
+    print(type(korean_golds))
+
+    # try again
+    korean_golds = medal_table[medal_table.Id == "KOR"]["Gold"].values
+    print(korean_golds)
+    print(type(korean_golds))
+
     #values[0] needed here as a dataframe would be outputted, containing the index. Convert to NumPy array to remove index
     korean_golds = medal_table[medal_table.Id == "KOR"]["Gold"].values[0] #interested in rows with Id "Korea" and then retrieve Gold
-    print(korean_golds, type(korean_golds))
     print(f"South Korea earned {korean_golds} golds")
+    
     print("\nCountries with more golds than South Korea:")
     #pick out all the rows where the gold value is greater than that of Koreas
     result = medal_table[medal_table["Gold"] > korean_golds][["Country", "Gold"]]
